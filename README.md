@@ -54,8 +54,8 @@ Codex creates only these four documents initially, then stops for review.
 - `ProjectPlans/ROADMAP.md`
 - `Context/Decision_Notes.md`
 - `Context/3-Hop-Method.md`
-- `docs/phase0/PHASE0_CHECKLIST.md`
-- `docs/phase0/READINESS_ASSESSMENT.md`
+- `docs/phase0/01_PHASE0_READINESS_ASSESSMENT.md`
+- `docs/phase0/02_PHASE0_CHECKLIST.md`
 
 The expanded workspace also includes `z-archive/`, reusable phase templates, and a conservative `.gitignore` when appropriate.
 
@@ -70,6 +70,19 @@ A project `README.md` is not created by default. It may be added when requested,
 - `docs/templates/PROJECT_RETROSPECTIVE.template.md`
 
 These remain reusable blank structures until a project phase or review needs them.
+
+### Phase review order
+
+Active phase documents use a two-digit prefix that tells the human the recommended review sequence. The prefix is local to its phase and reflects review priority, not creation order. For example:
+
+```text
+docs/phase1/
+  01_PHASE1_PLAN.md
+  02_PHASE1_DECISIONS.md
+  03_PHASE1_CHECKLIST.md
+```
+
+The agent adapts this order when a phase requires a different reading sequence. Reusable blank templates under `docs/templates/` remain unnumbered.
 
 ### Skill-only master file
 

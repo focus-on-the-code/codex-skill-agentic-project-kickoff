@@ -136,8 +136,8 @@ After approval, create or update:
 - `ProjectPlans/ROADMAP.md`
 - `Context/Decision_Notes.md`
 - `Context/3-Hop-Method.md`
-- `docs/phase0/PHASE0_CHECKLIST.md`
-- `docs/phase0/READINESS_ASSESSMENT.md`
+- `docs/phase0/01_PHASE0_READINESS_ASSESSMENT.md`
+- `docs/phase0/02_PHASE0_CHECKLIST.md`
 - `docs/templates/PHASE_PLAN.template.md`
 - `docs/templates/PHASE_CHECKLIST.template.md`
 - `docs/templates/REVIEW_SUMMARY.template.md`
@@ -152,6 +152,29 @@ Create a conservative `.gitignore` when appropriate for the project or when the 
 Do not create a project `README.md` by default during kickoff. Use `ProjectPlans/STRATEGY.md` as the early project explanation. Create `README.md` only if the user asks, the repository will be shared immediately, or external-facing documentation is needed.
 
 Do not create a project-local `BUILDER_PLAYBOOK.md` by default. Create one only when the user explicitly requests it or a portable snapshot is needed.
+
+## Phase Review Ordering Rule
+
+Name every active, phase-specific review artifact using this pattern:
+
+`NN_PHASE<phase-number>_<DESCRIPTIVE_NAME>.md`
+
+`NN` is a two-digit, zero-padded human review priority within that phase, starting at `01`. It is not the phase number or the order in which the file happened to be created.
+
+Assign the prefix according to the order a human should review the artifacts. Use consecutive priorities for the active artifacts in a phase. For example:
+
+```text
+docs/phase1/
+  01_PHASE1_PLAN.md
+  02_PHASE1_DECISIONS.md
+  03_PHASE1_CHECKLIST.md
+  04_PHASE1_REVIEW_SUMMARY.md
+  05_PHASE1_RETROSPECTIVE.md
+```
+
+Adapt the order to the work: a decision, research finding, or risk assessment may rank before the plan when it must be understood first. Keep each prefix stable after creation; if the recommended reading order materially changes, rename the affected phase artifacts together and report the rename in the next human-review summary.
+
+Apply this rule only to active phase artifacts. Keep the reusable blank files in `docs/templates/` unnumbered. Do not silently rename existing project files; propose a migration and wait for approval.
 
 ## Template Use Rules
 
@@ -335,7 +358,7 @@ The full explanation pattern is stored in `assets/templates/Context/3-Hop-Method
 
 At each stopping point, report:
 
-- files created or changed
+- files created or changed, listed in recommended review order when phase artifacts are involved
 - decisions recorded
 - assumptions preserved
 - open questions / decisions needed
