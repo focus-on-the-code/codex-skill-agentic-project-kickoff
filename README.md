@@ -71,7 +71,7 @@ A project `README.md` is not created by default. It may be added when requested,
 
 These remain reusable blank structures until a project phase or review needs them.
 
-### Phase review order
+### Phase review order (*new July 28*)
 
 Active phase documents use a two-digit prefix that tells the human the recommended review sequence. The prefix is local to its phase and reflects review priority, not creation order. For example:
 
